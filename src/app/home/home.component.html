@@ -1,2 +1,35 @@
-<app-root></app-root>
-<app-root></app-root>
+<div class="main-div">
+    <h2>Play Airthmetic quiz </h2>
+    
+
+    <button *ngIf="!quizStarted" mat-raised-button color="primary" (click)="startQuiz()">Start Quiz</button>
+    <div *ngIf="quizStarted" class="ques-quiz">
+        <div *ngIf="count <= totalQuestions-1; else result">
+                <label  for="score">Score :  {{score}} / {{totalQuestions}}</label>
+            <div>
+                <label class="example-radio-group-label">{{count+1}}. &nbsp;&nbsp;{{currentQuest.question}} ? 
+                </label>
+                <mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group"
+                    [(ngModel)]="answerValue">
+                    <mat-radio-button class="example-radio-button" *ngFor="let option of currentQuest.options"
+                        [value]="option">
+                        {{option}}
+                    </mat-radio-button>
+                </mat-radio-group>
+            </div>
+            <button mat-raised-button color="primary" (click)="next(currentQuest)">Next</button>
+        </div>
+
+        <ng-template #result>
+            <h4>Final Score : {{score}}</h4>
+            <div *ngFor="let item of answerArray;let i=index">
+                <div *ngIf="item.answer !== item.userEnteredValue">
+                    <label id="example-radio-group-label">Question {{i+1}}: &nbsp; &nbsp;{{item.question}} ?
+                        <div> Answer is : {{item.answer}}</div>
+                    </label>
+                </div>
+
+            </div>
+        </ng-template>
+    </div>
+</div>

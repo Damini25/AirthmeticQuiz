@@ -22,6 +22,6 @@ import { HomeComponent } from './home/home.component';
     ReactiveFormsModule,
   ],
   providers: [],
-  bootstrap: [HomeComponent]
+  bootstrap: [AppComponent]
 })
 export class AppModule { }
