@@ -1,0 +1,28 @@
+.example-radio-group {
+    display: flex;
+    flex-direction: column;
+  //  margin: 15px 0;
+  }
+  
+  .example-radio-button {
+    margin: 5px;
+  }
+.example-radio-group-label{
+  font-size: large;
+    font-weight: 600;
+}
+  .main-div{
+  background-color: #255fa7;
+  margin: 10% 15% 0 15%;
+  min-height: 13vw;
+  height: auto;
+  //text-align: center;
+  display: flex;
+  direction: column;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.ques-quiz{
+  margin-bottom: 6%;
+}
